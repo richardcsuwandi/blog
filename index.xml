@@ -74,7 +74,121 @@ d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.
 &lt;/a>
 What&amp;#39;s Next?
 &lt;/h3>
-&lt;p>In this blog post, we have explored a new decentralized approach to machine learning called federated learning. I personally believe that federated learning will play an important part in shaping the future of AI. In the near future, we will see a plethora of new applications taking advantage of federated learning, enhancing user experience in a way that was not possible before. Of course, this breakthrough also comes with a unique set of challenges that AI researchers need to tackle to bring this field forward. Nevertheless, the future looks exciting if AI and privacy could go hand in hand.&lt;/p></description></item><item><title>Why is AI So Smart and Yet So Dumb?</title><link>https://richardcsuwandi.github.io/blog/posts/moravec/</link><pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate><guid>https://richardcsuwandi.github.io/blog/posts/moravec/</guid><description>
+&lt;p>In this blog post, we have explored a new decentralized approach to machine learning called federated learning. I personally believe that federated learning will play an important part in shaping the future of AI. In the near future, we will see a plethora of new applications taking advantage of federated learning, enhancing user experience in a way that was not possible before. Of course, this breakthrough also comes with a unique set of challenges that AI researchers need to tackle to bring this field forward. Nevertheless, the future looks exciting if AI and privacy could go hand in hand.&lt;/p></description></item><item><title>Analyzing My Own LinkedIn Data</title><link>https://richardcsuwandi.github.io/blog/posts/linkedin-analysis/</link><pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate><guid>https://richardcsuwandi.github.io/blog/posts/linkedin-analysis/</guid><description>
+&lt;h2 id="motivation">
+&lt;a href="#motivation" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Motivation
+&lt;/h2>
+&lt;p>As an active user on &lt;a href="https://www.linkedin.com/in/richardcsuwandi/">LinkedIn&lt;/a> with more than 1000 connections, I was curious about the statistics of my network.
+In particular, I was wondering about these questions:&lt;/p>
+&lt;blockquote>
+&lt;p>What are the segments of people in my network?&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Do most of the people in my network work in data science related field?&lt;/p>
+&lt;/blockquote>
+&lt;p>In this blog post, I will go through how I utilized exploratory analysis and data visualizations to answer these questions and gain insights from my own LinkedIn data.
+The notebook of this project can be found &lt;a href="https://nbviewer.jupyter.org/github/richardcsuwandi/linkedin-network-analysis/blob/master/linkedin-network-analysis.ipynb">here&lt;/a>&lt;/p>
+&lt;h2 id="data">
+&lt;a href="#data" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Data
+&lt;/h2>
+&lt;p>To analyze and visualize my network, the first step that I need to do is to get my LinkedIn data.
+All I need to do is just select which data I want to get and it will be downloaded as a CSV file.
+&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/linkedin-network-analysis/blob/master/images/data.png?raw=true"
+alt="LinkedIn Data"
+/>&lt;/p>
+&lt;p>Here are the first few rows from the &lt;code>Connections.csv&lt;/code> file that I&amp;rsquo;ve downloaded:
+&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/linkedin-network-analysis/blob/master/images/df.png?raw=true"
+alt="DataFrame"
+/>&lt;/p>
+&lt;p>The &lt;code>DataFrame&lt;/code> above contains data about the current positions and companies of people in my network as well as when the date I connect to that person.&lt;/p>
+&lt;h2 id="key-findings">
+&lt;a href="#key-findings" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Key Findings
+&lt;/h2>
+&lt;h3 id="number-of-connections-on-a-given-date">
+&lt;a href="#number-of-connections-on-a-given-date" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Number of Connections on a Given Date
+&lt;/h3>
+&lt;blockquote>
+&lt;p>How many connections did I make in a given date?&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/linkedin-network-analysis/blob/master/images/date_connected.png?raw=true"
+alt="Date Connected"
+/>
+From the line plot above, we can see that there is a peak in the number of connections per day on 26 August 2020. It also seems that August 2020 is the period when I was the most active on LinkedIn.&lt;/p>
+&lt;h3 id="top-companiesorganizations-in-my-network">
+&lt;a href="#top-companiesorganizations-in-my-network" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Top Companies/Organizations in my Network
+&lt;/h3>
+&lt;blockquote>
+&lt;p>Which companies/organizations do the people in my network mainly come from?&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/linkedin-network-analysis/blob/master/images/company_bar.png?raw=true"
+alt="Company Bar Plot"
+/>
+&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/linkedin-network-analysis/blob/master/images/company_treemap.png?raw=true"
+alt="Company Treemap"
+/>
+Using the treemap above, it is easier to compare the proportion of one company/organization to the others. It looks like the largest proportion of my network are from my university.&lt;/p>
+&lt;h3 id="top-positions-in-my-network">
+&lt;a href="#top-positions-in-my-network" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Top Positions in my Network
+&lt;/h3>
+&lt;blockquote>
+&lt;p>What are the top common positions of people in my network?&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/linkedin-network-analysis/blob/master/images/position_bar.png?raw=true"
+alt="Position Bar Plot"
+/>
+&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/linkedin-network-analysis/blob/master/images/position_treemap.png?raw=true"
+alt="Position Treemap"
+/>
+The top position in my network is data scientists, followed by machine learning engineers and data analysts. It is great to know that the top common positions in my network are my target group for networking.&lt;/p></description></item><item><title>Why Is AI So Smart and Yet So Dumb?</title><link>https://richardcsuwandi.github.io/blog/posts/moravec/</link><pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate><guid>https://richardcsuwandi.github.io/blog/posts/moravec/</guid><description>
 &lt;p>Have you ever wondered why AI has such an easy time doing stuff that we find very hard? But having a hard time doing stuff that we find very easy?&lt;/p>
 &lt;h3 id="moravecs-paradox">
 &lt;a href="#moravecs-paradox" class="anchor">
@@ -269,7 +383,270 @@ alt=""
 &lt;p>Lego has taught me a lot about data and building models. Just like Lego:&lt;/p>
 &lt;blockquote>
 &lt;p>&amp;ldquo;To build something useful you need lots of resources, diversity, and the knowledge to build the right models in the right way.&amp;rdquo;&lt;/p>
-&lt;/blockquote></description></item><item><title>5 Reasons Why Data Science Is Like Cooking</title><link>https://richardcsuwandi.github.io/blog/posts/5-reasons/</link><pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate><guid>https://richardcsuwandi.github.io/blog/posts/5-reasons/</guid><description>
+&lt;/blockquote></description></item><item><title>I Taught My Computer to Classify Chinese Calligraphy Styles</title><link>https://richardcsuwandi.github.io/blog/posts/chinese-calligraphy/</link><pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate><guid>https://richardcsuwandi.github.io/blog/posts/chinese-calligraphy/</guid><description>
+&lt;h3 id="motivation">
+&lt;a href="#motivation" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Motivation
+&lt;/h3>
+&lt;p>As an international student studying in China, I’ve always been fascinated by the diversity of Chinese culture and history.
+This motivated me to build a &lt;a href="https://github.com/richardcsuwandi/chinese-calligraphy-classifier">Chinese calligraphy classifier&lt;/a>.&lt;/p>
+&lt;p>There are multiple styles of calligraphy, which mainly belong to different dynasties. Each of them has its way of shaping and arranging the character.
+For this project, I picked four styles:&lt;/p>
+&lt;ol>
+&lt;li>Seal Script (篆書 zhuanshu)&lt;/li>
+&lt;li>Cursive Script (草書 caoshu)&lt;/li>
+&lt;li>Clerical Script (隸書 lishu)&lt;/li>
+&lt;li>Standard Script (楷書 kaishu)&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/4_styles.jpg?raw=true"
+alt="4 Styles"
+/>&lt;/p>
+&lt;p>If you&amp;rsquo;re interested, you can read more about these different styles &lt;a href="https://en.wikipedia.org/wiki/Chinese_script_styles">here&lt;/a>.&lt;/p>
+&lt;h3 id="collecting-the-data">
+&lt;a href="#collecting-the-data" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Collecting the data
+&lt;/h3>
+&lt;p>To build a calligraphy classifier, we&amp;rsquo;re going to need some examples of each style.
+However, I did some online search and could not find a decently made dataset for various calligraphy styles.
+So, I decided to create the dataset myself.
+Fortunately, creating my own dataset isn’t that hard, thanks to Google Images’ search functionality and some JavaScript snippets.
+Here’s how I did it:
+&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/scraping.png?raw=true"
+alt="Scraping"
+/>&lt;/p>
+&lt;ul>
+&lt;li>I searched the images on Google Images and used this keyword format (style + “字帖網格&amp;quot;) to get the most relevant results.&lt;/li>
+&lt;li>I used this &lt;a href="https://gist.github.com/richardcsuwandi/ca7387d01407366b5b62d9b364e07765">JavaScript code&lt;/a> to retrieve the URLs of each of the images.&lt;/li>
+&lt;li>I downloaded the images using fast.ai’s &lt;a href="https://gist.github.com/richardcsuwandi/88281f8a006290e947483b8a8103fca4">download_images function&lt;/a>&lt;/li>
+&lt;li>Alternatively, I tried using this &lt;a href="https://gist.github.com/richardcsuwandi/f006b144801e2b5b2aef77ef3166d870">snippet&lt;/a> to automatically download the images from Baidu Images.&lt;/li>
+&lt;/ul>
+&lt;h3 id="preprocessing-the-data">
+&lt;a href="#preprocessing-the-data" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Preprocessing the data
+&lt;/h3>
+&lt;p>After importing the data, I split the data into training and validation set with an 80:20 ratio.
+The images are also resized to 224 pixels, which is usually a good value for image recognition tasks.
+Here&amp;rsquo;s some of the images in the dataset:&lt;/p>
+&lt;p>&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/show_img.png?raw=true"
+alt="Show Batch"
+/>&lt;/p>
+&lt;p>Observation: The dataset is rather ‘dirty’. Some of the images are not well-aligned and not properly cropped.&lt;/p>
+&lt;h3 id="building-the-model">
+&lt;a href="#building-the-model" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Building the model
+&lt;/h3>
+&lt;p>For the model, I use the &lt;a href="https://arxiv.org/abs/1512.03385">ResNet-50&lt;/a>
+model architecture with the pre-trained weights on the &lt;a href="http://www.image-net.org/">ImageNet&lt;/a> dataset.
+To train the layers, I use the &lt;code>fit_one_cycle&lt;/code> method based on the &amp;lsquo;&lt;a href="https://sgugger.github.io/the-1cycle-policy.html">&lt;em>1 Cycle Policy&lt;/em>&lt;/a>&amp;rsquo;,
+which basically changes the learning rate over time to achieve better results.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="n">learn&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fit_one_cycle&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>epoch&lt;/th>
+&lt;th>train_loss&lt;/th>
+&lt;th>valid_loss&lt;/th>
+&lt;th>accuracy&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>0&lt;/td>
+&lt;td>1.469915&lt;/td>
+&lt;td>0.927739&lt;/td>
+&lt;td>0.737500&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>1.075304&lt;/td>
+&lt;td>0.637498&lt;/td>
+&lt;td>0.790000&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>0.820588&lt;/td>
+&lt;td>0.574865&lt;/td>
+&lt;td>0.822500&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>After 3 epochs of &lt;code>fit_one_cycle&lt;/code>, I managed to achieve an accuracy of 82% on the validation set.&lt;/p>
+&lt;h3 id="tuning-the-model">
+&lt;a href="#tuning-the-model" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Tuning the model
+&lt;/h3>
+&lt;p>By default, the model’s initial layers are frozen to prevent modifying the pre-trained weights.
+I tried unfreezing all the layers and train the model again for another 2 epochs.
+To find the perfect learning rate, I used the lr_find and recorder.plot methods to create the learning rate plot.&lt;/p>
+&lt;p>&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/lr_plot.png?raw=true"
+alt="LR Plot"
+/>&lt;/p>
+&lt;p>The red dot on the graph indicates the point where the gradient is the steepest.
+I used that point as the first guess for the learning rate and train the model for another 2 epochs.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="n">min_grad_lr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">learn&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">recorder&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">min_grad_lr&lt;/span>
+&lt;span class="n">learn&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fit_one_cycle&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">min_grad_lr&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>epoch&lt;/th>
+&lt;th>train_loss&lt;/th>
+&lt;th>valid_loss&lt;/th>
+&lt;th>accuracy&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>0&lt;/td>
+&lt;td>0.484713&lt;/td>
+&lt;td>0.273136&lt;/td>
+&lt;td>0.885609&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>0.491012&lt;/td>
+&lt;td>0.287252&lt;/td>
+&lt;td>0.878229&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="cleaning-the-data">
+&lt;a href="#cleaning-the-data" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Cleaning the data
+&lt;/h3>
+&lt;p>fast.ai also provides a nice functionality for cleaning your data using Jupyter widgets.
+The &lt;code>ImageCleaner&lt;/code> class displays images for re-labeling or deletion.
+&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/cleaning.png?raw=true"
+alt="Cleaning"
+/>&lt;/p>
+&lt;p>The results of the cleaning are saved as a CSV file which I then used to load the data.
+I applied the same training steps as above but using the cleaned data.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="n">min_grad_lr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">learn&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">recorder&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">min_grad_lr&lt;/span>
+&lt;span class="n">learn&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fit_one_cycle&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">min_grad_lr&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>epoch&lt;/th>
+&lt;th>train_loss&lt;/th>
+&lt;th>valid_loss&lt;/th>
+&lt;th>accuracy&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>0&lt;/td>
+&lt;td>0.428563&lt;/td>
+&lt;td>0.235304&lt;/td>
+&lt;td>0.922509&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>0.398285&lt;/td>
+&lt;td>0.289792&lt;/td>
+&lt;td>0.892989&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>0.422449&lt;/td>
+&lt;td>0.230904&lt;/td>
+&lt;td>0.926199&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>0.436341&lt;/td>
+&lt;td>0.261377&lt;/td>
+&lt;td>0.915129&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>With only very few lines of code and very minimum efforts for data collection, I managed to achieve an accuracy of 92%.
+I believe with more and better-quality data, I can achieve a state-of-the-art result.&lt;/p>
+&lt;h3 id="interpreting-the-results">
+&lt;a href="#interpreting-the-results" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Interpreting the results
+&lt;/h3>
+&lt;p>I used fast.ai’s &lt;code>ClassificationInterpretation&lt;/code> class to interpret the results.
+Then, I use plot the confusion matrix to see where the model seems to be confused.&lt;/p>
+&lt;p>&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/conf_mat.png?raw=true"
+alt="Confusion Matrix"
+/>&lt;/p>
+&lt;p>From the confusion matrix, it can be seen that the model does pretty well in classifying the ‘&lt;em>zhuanshu&lt;/em>’ style.
+This is probably due to its unique stroke arrangements.
+To wrap up, I also plotted some predictions by calling the &lt;code>learn.show_results&lt;/code> method.&lt;/p>
+&lt;p>&lt;img loading="lazy"
+src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/predictions.PNG?raw=true"
+alt="Predictions"
+/>&lt;/p></description></item><item><title>5 Reasons Why Data Science Is Like Cooking</title><link>https://richardcsuwandi.github.io/blog/posts/5-reasons/</link><pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate><guid>https://richardcsuwandi.github.io/blog/posts/5-reasons/</guid><description>
 &lt;p>Data science is a lot like cooking. Although raw ingredients may be fascinating at first, the fun doesn't start until you're actually able to start slicing, dicing, and eventually serving up something delicious to devour. Most of the time, you'll end up with a dish, but in the data science world, we call it data insights. In this blog post, I want to share 5 analogies of data science to cooking which helped me understand the field better.&lt;/p>
 &lt;h3 id="1-without-good-ingredients-you-cant-cook-a-good-dish">
 &lt;a href="#1-without-good-ingredients-you-cant-cook-a-good-dish" class="anchor">

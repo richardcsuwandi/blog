@@ -1,0 +1,294 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=theme-color content="dark">
+<title>I Taught My Computer to Classify Chinese Calligraphy Styles | Richard's Blog</title>
+<meta property="og:site_name" content>
+<meta property="og:title" content="I Taught My Computer to Classify Chinese Calligraphy Styles | Richard's Blog">
+<meta itemprop=name content="I Taught My Computer to Classify Chinese Calligraphy Styles | Richard's Blog">
+<meta name=twitter:title content="I Taught My Computer to Classify Chinese Calligraphy Styles | Richard's Blog">
+<meta name=application-name content="I Taught My Computer to Classify Chinese Calligraphy Styles | Richard's Blog">
+<meta name=description content>
+<meta name=twitter:description content>
+<meta itemprop=description content>
+<meta property="og:description" content>
+<link rel="shortcut icon" type=image/x-icon href=https://richardcsuwandi.github.io/blog/favicon.ico>
+<link rel=stylesheet href=https://richardcsuwandi.github.io/blog/sass/main.min.dca40d853c3d06706aaa6f0ae6aeb36bb27369100ac7e478776cfff9b4ac4d4e.css>
+</head>
+<script>(function(){const b='ThemeColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.userColorScheme='dark':document.documentElement.dataset.userColorScheme='light'})()</script>
+<body class=dark>
+<nav class=navbar>
+<div class=container>
+<div class=flex>
+<div>
+<a class=brand href=https://richardcsuwandi.github.io/blog/>
+Richard's Blog
+</a>
+</div>
+<div class=flex>
+<a href=https://richardcsuwandi.github.io/blog/posts/>Posts</a>
+<button id=dark-mode-button><svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)" viewBox="0 0 36 36"><path fill="#ffd983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163.0 101.643 1.641 1.163 1.163.0 00-1.643-1.641zm-16.022 14.38a1.74 1.74.0 000 2.465 1.742 1.742.0 100-2.465zm13.968-2.147a2.904 2.904.0 01-4.108.0 2.902 2.902.0 010-4.107 2.902 2.902.0 014.108.0 2.902 2.902.0 010 4.107z" fill="#ffcc4d"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)"/></svg><svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)" viewBox="0 0 36 36"><path fill="#ffd983" d="M16 2s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2V2zm18 14s2 0 2 2-2 2-2 2h-2s-2 0-2-2 2-2 2-2h2zM4 16s2 0 2 2-2 2-2 2H2s-2 0-2-2 2-2 2-2h2zm5.121-8.707s1.414 1.414.0 2.828-2.828.0-2.828.0L4.878 8.708s-1.414-1.414.0-2.829c1.415-1.414 2.829.0 2.829.0l1.414 1.414zm21 21s1.414 1.414.0 2.828-2.828.0-2.828.0l-1.414-1.414s-1.414-1.414.0-2.828 2.828.0 2.828.0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828.0.0-2.828.0-2.828l1.414-1.414s1.414-1.414 2.828.0.0 2.828.0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828.0.0-2.828.0-2.828l1.414-1.414s1.414-1.414 2.828.0.0 2.828.0 2.828l-1.414 1.414zM16 32s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2v-2z"/><circle fill="#ffd983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)"/></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main>
+<div class=container>
+<article>
+<header class=article-header>
+<div class=thumb>
+<div>
+<h1>I Taught My Computer to Classify Chinese Calligraphy Styles</h1>
+<div class=post-meta>
+<div>
+By Richard Cornelius Suwandi | <time>July 31, 2020</time>
+| 4 minutes
+</div>
+<div class=tags>
+<a href=https://richardcsuwandi.github.io/blog/tags/deep-learning/>deep-learning</a>
+<a href=https://richardcsuwandi.github.io/blog/tags/machine-learning/>machine-learning</a>
+<a href=https://richardcsuwandi.github.io/blog/tags/neural-network/>neural-network</a>
+</div>
+</div>
+</div>
+</div>
+</header>
+</article>
+<div class=article-post>
+<h3 id=motivation>
+<a href=#motivation class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+Motivation
+</h3>
+<p>As an international student studying in China, I’ve always been fascinated by the diversity of Chinese culture and history.
+This motivated me to build a <a href=https://github.com/richardcsuwandi/chinese-calligraphy-classifier>Chinese calligraphy classifier</a>.</p>
+<p>There are multiple styles of calligraphy, which mainly belong to different dynasties. Each of them has its way of shaping and arranging the character.
+For this project, I picked four styles:</p>
+<ol>
+<li>Seal Script (篆書 zhuanshu)</li>
+<li>Cursive Script (草書 caoshu)</li>
+<li>Clerical Script (隸書 lishu)</li>
+<li>Standard Script (楷書 kaishu)</li>
+</ol>
+<p><img loading=lazy src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/4_styles.jpg?raw=true" alt="4 Styles"></p>
+<p>If you&rsquo;re interested, you can read more about these different styles <a href=https://en.wikipedia.org/wiki/Chinese_script_styles>here</a>.</p>
+<h3 id=collecting-the-data>
+<a href=#collecting-the-data class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+Collecting the data
+</h3>
+<p>To build a calligraphy classifier, we&rsquo;re going to need some examples of each style.
+However, I did some online search and could not find a decently made dataset for various calligraphy styles.
+So, I decided to create the dataset myself.
+Fortunately, creating my own dataset isn’t that hard, thanks to Google Images’ search functionality and some JavaScript snippets.
+Here’s how I did it:
+<img loading=lazy src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/scraping.png?raw=true" alt=Scraping></p>
+<ul>
+<li>I searched the images on Google Images and used this keyword format (style + “字帖網格") to get the most relevant results.</li>
+<li>I used this <a href=https://gist.github.com/richardcsuwandi/ca7387d01407366b5b62d9b364e07765>JavaScript code</a> to retrieve the URLs of each of the images.</li>
+<li>I downloaded the images using fast.ai’s <a href=https://gist.github.com/richardcsuwandi/88281f8a006290e947483b8a8103fca4>download_images function</a></li>
+<li>Alternatively, I tried using this <a href=https://gist.github.com/richardcsuwandi/f006b144801e2b5b2aef77ef3166d870>snippet</a> to automatically download the images from Baidu Images.</li>
+</ul>
+<h3 id=preprocessing-the-data>
+<a href=#preprocessing-the-data class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+Preprocessing the data
+</h3>
+<p>After importing the data, I split the data into training and validation set with an 80:20 ratio.
+The images are also resized to 224 pixels, which is usually a good value for image recognition tasks.
+Here&rsquo;s some of the images in the dataset:</p>
+<p><img loading=lazy src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/show_img.png?raw=true" alt="Show Batch"></p>
+<p>Observation: The dataset is rather ‘dirty’. Some of the images are not well-aligned and not properly cropped.</p>
+<h3 id=building-the-model>
+<a href=#building-the-model class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+Building the model
+</h3>
+<p>For the model, I use the <a href=https://arxiv.org/abs/1512.03385>ResNet-50</a>
+model architecture with the pre-trained weights on the <a href=http://www.image-net.org/>ImageNet</a> dataset.
+To train the layers, I use the <code>fit_one_cycle</code> method based on the &lsquo;<a href=https://sgugger.github.io/the-1cycle-policy.html><em>1 Cycle Policy</em></a>&rsquo;,
+which basically changes the learning rate over time to achieve better results.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>learn</span><span class=o>.</span><span class=n>fit_one_cycle</span><span class=p>(</span><span class=mi>3</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>epoch</th>
+<th>train_loss</th>
+<th>valid_loss</th>
+<th>accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1.469915</td>
+<td>0.927739</td>
+<td>0.737500</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1.075304</td>
+<td>0.637498</td>
+<td>0.790000</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.820588</td>
+<td>0.574865</td>
+<td>0.822500</td>
+</tr>
+</tbody>
+</table>
+<p>After 3 epochs of <code>fit_one_cycle</code>, I managed to achieve an accuracy of 82% on the validation set.</p>
+<h3 id=tuning-the-model>
+<a href=#tuning-the-model class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+Tuning the model
+</h3>
+<p>By default, the model’s initial layers are frozen to prevent modifying the pre-trained weights.
+I tried unfreezing all the layers and train the model again for another 2 epochs.
+To find the perfect learning rate, I used the lr_find and recorder.plot methods to create the learning rate plot.</p>
+<p><img loading=lazy src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/lr_plot.png?raw=true" alt="LR Plot"></p>
+<p>The red dot on the graph indicates the point where the gradient is the steepest.
+I used that point as the first guess for the learning rate and train the model for another 2 epochs.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>min_grad_lr</span> <span class=o>=</span> <span class=n>learn</span><span class=o>.</span><span class=n>recorder</span><span class=o>.</span><span class=n>min_grad_lr</span>
+<span class=n>learn</span><span class=o>.</span><span class=n>fit_one_cycle</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=n>min_grad_lr</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>epoch</th>
+<th>train_loss</th>
+<th>valid_loss</th>
+<th>accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0.484713</td>
+<td>0.273136</td>
+<td>0.885609</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0.491012</td>
+<td>0.287252</td>
+<td>0.878229</td>
+</tr>
+</tbody>
+</table>
+<h3 id=cleaning-the-data>
+<a href=#cleaning-the-data class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+Cleaning the data
+</h3>
+<p>fast.ai also provides a nice functionality for cleaning your data using Jupyter widgets.
+The <code>ImageCleaner</code> class displays images for re-labeling or deletion.
+<img loading=lazy src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/cleaning.png?raw=true" alt=Cleaning></p>
+<p>The results of the cleaning are saved as a CSV file which I then used to load the data.
+I applied the same training steps as above but using the cleaned data.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=n>min_grad_lr</span> <span class=o>=</span> <span class=n>learn</span><span class=o>.</span><span class=n>recorder</span><span class=o>.</span><span class=n>min_grad_lr</span>
+<span class=n>learn</span><span class=o>.</span><span class=n>fit_one_cycle</span><span class=p>(</span><span class=mi>4</span><span class=p>,</span> <span class=n>min_grad_lr</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>epoch</th>
+<th>train_loss</th>
+<th>valid_loss</th>
+<th>accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0.428563</td>
+<td>0.235304</td>
+<td>0.922509</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0.398285</td>
+<td>0.289792</td>
+<td>0.892989</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.422449</td>
+<td>0.230904</td>
+<td>0.926199</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.436341</td>
+<td>0.261377</td>
+<td>0.915129</td>
+</tr>
+</tbody>
+</table>
+<p>With only very few lines of code and very minimum efforts for data collection, I managed to achieve an accuracy of 92%.
+I believe with more and better-quality data, I can achieve a state-of-the-art result.</p>
+<h3 id=interpreting-the-results>
+<a href=#interpreting-the-results class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+Interpreting the results
+</h3>
+<p>I used fast.ai’s <code>ClassificationInterpretation</code> class to interpret the results.
+Then, I use plot the confusion matrix to see where the model seems to be confused.</p>
+<p><img loading=lazy src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/conf_mat.png?raw=true" alt="Confusion Matrix"></p>
+<p>From the confusion matrix, it can be seen that the model does pretty well in classifying the ‘<em>zhuanshu</em>’ style.
+This is probably due to its unique stroke arrangements.
+To wrap up, I also plotted some predictions by calling the <code>learn.show_results</code> method.</p>
+<p><img loading=lazy src="https://github.com/richardcsuwandi/chinese-calligraphy-classifier/blob/master/images/predictions.PNG?raw=true" alt=Predictions></p>
+</div>
+</div>
+<div class=container>
+<nav class="flex container suggested">
+<a rel=prev href=https://richardcsuwandi.github.io/blog/posts/5-reasons/ title="Previous post (older)">
+<span>Previous</span>
+5 Reasons Why Data Science Is Like Cooking
+</a>
+<a rel=next href=https://richardcsuwandi.github.io/blog/posts/lego/ title="Next post (newer)">
+<span>Next</span>
+Data is the New Lego
+</a>
+</nav>
+</div>
+<div class=container>
+</div>
+</main>
+</main>
+<footer class="footer flex">
+<section class=container>
+<nav class=footer-links>
+</nav>
+</section>
+<script defer src=https://richardcsuwandi.github.io/blog/ts/features.5b0e1ea6de1458adc3d83cf2550066d995b148f384d34a9c1ddad2dd7d0fe110.js data-enable-footnotes=true></script>
+</footer>
+</body>
+</html>
