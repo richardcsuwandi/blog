@@ -120,12 +120,11 @@
 &lt;p&gt;&amp;ldquo;It is comparatively easy to make computers exhibit adult level performance on intelligence tests or playing checkers, and difficult or impossible to give them the skills of a one-year-old when it comes to perception and mobility.&amp;rdquo;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;This curious observation was later known as &lt;a href=&#34;https://en.wikipedia.org/wiki/Moravec%27s_paradox&#34;&gt;Moravec&amp;rsquo;s Paradox&lt;/a&gt;. And even though it was formulated more than 30 years ago, it is still relevant today.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; 
-    src=&#34;https://miro.medium.com/max/1050/0*eyfhIvk-_BHZDo_i&#34; 
-    alt=&#34;&#34; 
-     /&gt;&lt;/p&gt;
 &lt;p&gt;Don&#39;t get me wrong, AI certainly has come a long way. We&#39;ve seen AI beating the world champion in the board game &lt;a href=&#34;https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol&#34;&gt;Go&lt;/a&gt;, the quiz game &lt;a href=&#34;https://www.eetimes.com/ibms-watson-computer-beats-humans-at-jeopardy/&#34;&gt;Jeopardy&lt;/a&gt;, the card game &lt;a href=&#34;https://www.sciencedaily.com/releases/2019/07/190711141343.htm&#34;&gt;Poker&lt;/a&gt;, and the video game &lt;a href=&#34;https://www.vice.com/en_us/article/gy3nvq/ai-beat-humans-at-dota-2&#34;&gt;Dota 2&lt;/a&gt;. But on the flip side, AI is still having a hard time &lt;a href=&#34;https://unbabel.com/blog/ai-humor/&#34;&gt;understanding a joke&lt;/a&gt; or &lt;a href=&#34;https://business.blogthinkbig.com/can-artificial-intelligence-understand-emotions/&#34;&gt;interpreting people&amp;rsquo;s emotions&lt;/a&gt;.
-Therefore, the big question is: &amp;gt; &amp;ldquo;Why does AI struggle with the simple?&amp;rdquo;&lt;/p&gt;
+Therefore, the big question is:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Why does AI struggle with the simple?&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;the-reason-behind-moravecs-paradox&#34;&gt;
     &lt;a href=&#34;#the-reason-behind-moravecs-paradox&#34; class=&#34;anchor&#34;&gt;
         &lt;svg class=&#34;icon&#34; aria-hidden=&#34;true&#34; focusable=&#34;false&#34; height=&#34;16&#34; version=&#34;1.1&#34; viewBox=&#34;0 0 16 16&#34; width=&#34;16&#34;&gt;
