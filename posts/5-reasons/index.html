@@ -1,238 +1,138 @@
-<!DOCTYPE html>
-<html lang="en-us">
-    
+<!doctype html><html lang=en-us>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="theme-color" content="dark">
-    <title>5 Reasons Why Data Science Is Like Cooking | Richard&#39;s Blog</title>
-
-    
-    
-    
-    <meta property="og:site_name" content="" />
-    <meta property="og:title" content="5 Reasons Why Data Science Is Like Cooking | Richard&#39;s Blog"/>
-    <meta itemprop="name" content="5 Reasons Why Data Science Is Like Cooking | Richard&#39;s Blog" />
-    <meta name="twitter:title" content="5 Reasons Why Data Science Is Like Cooking | Richard&#39;s Blog" />
-    <meta name="application-name" content="5 Reasons Why Data Science Is Like Cooking | Richard&#39;s Blog" />
-
-
-    <meta name="description" content="" />
-    <meta name="twitter:description" content=""/>
-    <meta itemprop="description" content=""/>
-    <meta property="og:description" content="" />
-
-    
-
-
-    <link rel="shortcut icon" type="image/x-icon" href="https://richardcsuwandi.github.io/blog/favicon.ico" />
-    
-    <link rel="stylesheet" href="https://richardcsuwandi.github.io/blog/sass/main.min.dca40d853c3d06706aaa6f0ae6aeb36bb27369100ac7e478776cfff9b4ac4d4e.css">
-    
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=theme-color content="dark">
+<title>5 Reasons Why Data Science Is Like Cooking | Richard's Blog</title>
+<meta property="og:site_name" content>
+<meta property="og:title" content="5 Reasons Why Data Science Is Like Cooking | Richard's Blog">
+<meta itemprop=name content="5 Reasons Why Data Science Is Like Cooking | Richard's Blog">
+<meta name=twitter:title content="5 Reasons Why Data Science Is Like Cooking | Richard's Blog">
+<meta name=application-name content="5 Reasons Why Data Science Is Like Cooking | Richard's Blog">
+<meta name=description content>
+<meta name=twitter:description content>
+<meta itemprop=description content>
+<meta property="og:description" content>
+<link rel="shortcut icon" type=image/x-icon href=https://richardcsuwandi.github.io/blog/favicon.ico>
+<link rel=stylesheet href=https://richardcsuwandi.github.io/blog/sass/main.min.dca40d853c3d06706aaa6f0ae6aeb36bb27369100ac7e478776cfff9b4ac4d4e.css>
 </head>
-    <script>
-    (function() {
-        const colorSchemeKey = 'ThemeColorScheme';
-        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-
-        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
-            
-
-            document.documentElement.dataset.userColorScheme = 'dark';
-        } else {
-            document.documentElement.dataset.userColorScheme = 'light';
-        }
-    })();
-</script>
-
-    <body class="dark">
-        <nav class="navbar">
-    <div class="container">
-        <div class="flex">
-            <div>
-                <a class="brand" href="https://richardcsuwandi.github.io/blog/">
-                    
-                    
-                    Richard&#39;s Blog
-                    </a>
-            </div>
-            <div class="flex">
-                
-                <a href="https://richardcsuwandi.github.io/blog/posts/">Posts</a>
-                
-                <button id="dark-mode-button">
-                  <svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163 0 1 0 1.643 1.641a1.163 1.163 0 0 0-1.643-1.641zm-16.022 14.38a1.74 1.74 0 0 0 0 2.465a1.742 1.742 0 1 0 0-2.465zm13.968-2.147a2.904 2.904 0 0 1-4.108 0a2.902 2.902 0 0 1 0-4.107a2.902 2.902 0 0 1 4.108 0a2.902 2.902 0 0 1 0 4.107z" fill="#FFCC4D"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
-                  <svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M16 2s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2V2zm18 14s2 0 2 2s-2 2-2 2h-2s-2 0-2-2s2-2 2-2h2zM4 16s2 0 2 2s-2 2-2 2H2s-2 0-2-2s2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828s-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828s-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828s2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2v-2z"/><circle fill="#FFD983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
-                </button>
-            </div>
-            </div>
-    </div>
+<script>(function(){const b='ThemeColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.userColorScheme='dark':document.documentElement.dataset.userColorScheme='light'})()</script>
+<body class=dark>
+<nav class=navbar>
+<div class=container>
+<div class=flex>
+<div>
+<a class=brand href=https://richardcsuwandi.github.io/blog/>
+Richard's Blog
+</a>
+</div>
+<div class=flex>
+<a href=https://richardcsuwandi.github.io/blog/posts/>Posts</a>
+<button id=dark-mode-button><svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)" viewBox="0 0 36 36"><path fill="#ffd983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163.0 101.643 1.641 1.163 1.163.0 00-1.643-1.641zm-16.022 14.38a1.74 1.74.0 000 2.465 1.742 1.742.0 100-2.465zm13.968-2.147a2.904 2.904.0 01-4.108.0 2.902 2.902.0 010-4.107 2.902 2.902.0 014.108.0 2.902 2.902.0 010 4.107z" fill="#ffcc4d"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)"/></svg><svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)" viewBox="0 0 36 36"><path fill="#ffd983" d="M16 2s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2V2zm18 14s2 0 2 2-2 2-2 2h-2s-2 0-2-2 2-2 2-2h2zM4 16s2 0 2 2-2 2-2 2H2s-2 0-2-2 2-2 2-2h2zm5.121-8.707s1.414 1.414.0 2.828-2.828.0-2.828.0L4.878 8.708s-1.414-1.414.0-2.829c1.415-1.414 2.829.0 2.829.0l1.414 1.414zm21 21s1.414 1.414.0 2.828-2.828.0-2.828.0l-1.414-1.414s-1.414-1.414.0-2.828 2.828.0 2.828.0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828.0.0-2.828.0-2.828l1.414-1.414s1.414-1.414 2.828.0.0 2.828.0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828.0.0-2.828.0-2.828l1.414-1.414s1.414-1.414 2.828.0.0 2.828.0 2.828l-1.414 1.414zM16 32s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2v-2z"/><circle fill="#ffd983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)"/></svg>
+</button>
+</div>
+</div>
+</div>
 </nav>
-        <main>
-            
-<div class="container">
-    <article>
-        <header class="article-header">
-            <div class="thumb">
-                <div>
-                    <h1>5 Reasons Why Data Science Is Like Cooking</h1>
-                    <div class="post-meta">
-                        <div>
-                            
-                            
-                              
-                            
-                            By Richard Cornelius Suwandi | <time>July 23, 2020</time>
-                            | 3 minutes
-                        </div>
-                        <div class="tags">
-                            
-                            <a href="https://richardcsuwandi.github.io/blog/tags/data-science/">data-science</a>
-                            
-                            <a href="https://richardcsuwandi.github.io/blog/tags/machine-learning/">machine-learning</a>
-                            
-                            <a href="https://richardcsuwandi.github.io/blog/tags/data-analysis/">data-analysis</a>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-    </article>
-
-    <div class="article-post">
-    <p>Data science is a lot like cooking. Although raw ingredients may be fascinating at first, the fun doesn't start until you're actually able to start slicing, dicing, and eventually serving up something delicious to devour. Most of the time, you'll end up with a dish, but in the data science world, we call it data insights. In this blog post, I want to share 5 analogies of data science to cooking which helped me understand the field better.</p>
-<h3 id="1-without-good-ingredients-you-cant-cook-a-good-dish">
-    <a href="#1-without-good-ingredients-you-cant-cook-a-good-dish" class="anchor">
-        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
-            <path fill-rule="evenodd"
-                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
-            </path>
-        </svg>
-    </a>
-    1. Without good ingredients, you can&#39;t cook a good dish
+<main>
+<div class=container>
+<article>
+<header class=article-header>
+<div class=thumb>
+<div>
+<h1>5 Reasons Why Data Science Is Like Cooking</h1>
+<div class=post-meta>
+<div>
+By Richard Cornelius Suwandi | <time>July 23, 2020</time>
+| 3 minutes
+</div>
+<div class=tags>
+<a href=https://richardcsuwandi.github.io/blog/tags/data-science/>data-science</a>
+<a href=https://richardcsuwandi.github.io/blog/tags/machine-learning/>machine-learning</a>
+<a href=https://richardcsuwandi.github.io/blog/tags/data-analysis/>data-analysis</a>
+</div>
+</div>
+</div>
+</div>
+</header>
+</article>
+<div class=article-post>
+<p>Data science is a lot like cooking. Although raw ingredients may be fascinating at first, the fun doesn't start until you're actually able to start slicing, dicing, and eventually serving up something delicious to devour. Most of the time, you'll end up with a dish, but in the data science world, we call it data insights. In this blog post, I want to share 5 analogies of data science to cooking which helped me understand the field better.</p>
+<h3 id=1-without-good-ingredients-you-cant-cook-a-good-dish>
+<a href=#1-without-good-ingredients-you-cant-cook-a-good-dish class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+1. Without good ingredients, you can't cook a good dish
 </h3>
-<p><img loading="lazy" 
-    src="https://miro.medium.com/max/1050/1*fjzxzVVUxF57MZkF_StH_A.jpeg" 
-    alt="" 
-     /></p>
-<p>Just like ingredients, data are the raw materials. And as the saying goes, &quot;garbage in, garbage out&quot;. Good data is key to a successful data science project. The output of your machine learning model is just as good as what you put inside it. Hence, it is important to make sure that your data contains enough relevant features and not too many irrelevant ones. Without relevant and quality data, you can't really do any useful data science.</p>
+<p><img loading=lazy src=https://miro.medium.com/max/1050/1*fjzxzVVUxF57MZkF_StH_A.jpeg alt></p>
+<p>Just like ingredients, data are the raw materials. And as the saying goes, "garbage in, garbage out". Good data is key to a successful data science project. The output of your machine learning model is just as good as what you put inside it. Hence, it is important to make sure that your data contains enough relevant features and not too many irrelevant ones. Without relevant and quality data, you can't really do any useful data science.</p>
 <blockquote>
 <p>&ldquo;Data are becoming the new raw material of business.&rdquo; — Craig Mundie</p>
 </blockquote>
-<h3 id="2-most-time-and-effort-are-spent-on-cleaning-and-preparing-the-ingredients">
-    <a href="#2-most-time-and-effort-are-spent-on-cleaning-and-preparing-the-ingredients" class="anchor">
-        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
-            <path fill-rule="evenodd"
-                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
-            </path>
-        </svg>
-    </a>
-    2. Most time and effort are spent on cleaning and preparing the ingredients
+<h3 id=2-most-time-and-effort-are-spent-on-cleaning-and-preparing-the-ingredients>
+<a href=#2-most-time-and-effort-are-spent-on-cleaning-and-preparing-the-ingredients class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+2. Most time and effort are spent on cleaning and preparing the ingredients
 </h3>
-<p><img loading="lazy" 
-    src="https://miro.medium.com/max/1050/1*E5Z3zJHwBsdEghHLkSNYrg.jpeg" 
-    alt="" 
-     /></p>
+<p><img loading=lazy src=https://miro.medium.com/max/1050/1*E5Z3zJHwBsdEghHLkSNYrg.jpeg alt></p>
 <p>The fact that most time and effort in cooking are spent cleaning and preparing the ingredients will resonate with anyone who's had a helping hand in the kitchen. This is also true for data science. But instead of slicing, dicing, and marinating; we have feature engineering, data cleaning, and normalization. Cleaning and preparing the data is required before delivering insightful visualizations and analytics that can eventually drive data-informed business decisions.</p>
 <blockquote>
 <p>&ldquo;Data science is 80% preparing data, 20% complaining about preparing data.&rdquo;</p>
 </blockquote>
-<h3 id="3-different-tools-and-techniques-are-needed-for-different-recipes">
-    <a href="#3-different-tools-and-techniques-are-needed-for-different-recipes" class="anchor">
-        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
-            <path fill-rule="evenodd"
-                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
-            </path>
-        </svg>
-    </a>
-    3. Different tools and techniques are needed for different recipes
+<h3 id=3-different-tools-and-techniques-are-needed-for-different-recipes>
+<a href=#3-different-tools-and-techniques-are-needed-for-different-recipes class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+3. Different tools and techniques are needed for different recipes
 </h3>
-<p><img loading="lazy" 
-    src="https://miro.medium.com/max/1050/0*q7qRgojbYOs9Mhhw" 
-    alt="" 
-     /></p>
+<p><img loading=lazy src=https://miro.medium.com/max/1050/0*q7qRgojbYOs9Mhhw alt></p>
 <p>A cozy meal for two requires different tools compared to catering for 2,000. Similarly, processing 1,000 rows of data may run on a laptop, but processing a billion rows may require specialized distributed systems and servers. Choosing the right techniques is also important for both of these tasks. No one likes an undercooked or overcooked dish, just like underfitting and overfitting in data science.</p>
 <blockquote>
 <p>&ldquo;There is no super algorithm that will work perfectly for all datasets.&rdquo; — No Free Lunch Theorem</p>
 </blockquote>
-<h3 id="4-cooking-is-both-a-science-and-an-art">
-    <a href="#4-cooking-is-both-a-science-and-an-art" class="anchor">
-        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
-            <path fill-rule="evenodd"
-                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
-            </path>
-        </svg>
-    </a>
-    4. Cooking is both a science and an art
+<h3 id=4-cooking-is-both-a-science-and-an-art>
+<a href=#4-cooking-is-both-a-science-and-an-art class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+4. Cooking is both a science and an art
 </h3>
-<p><img loading="lazy" 
-    src="https://miro.medium.com/max/1050/0*OigrY3TrJ6G9nVjr" 
-    alt="" 
-     /></p>
+<p><img loading=lazy src=https://miro.medium.com/max/1050/0*OigrY3TrJ6G9nVjr alt></p>
 <p>Just like cooking, you need certain tools and techniques, but you also need creativity and intuition. Data science doesn't exist in a vacuum, it must relate to other areas for it to have the greatest impact. Packaging the numbers creatively in a way that can be interpreted by others is crucial to getting them to see the whole picture and therefore finding the best solution. When you approach data science in a creative way, the results are often astonishing.</p>
 <blockquote>
 <p>&ldquo;Talented data scientists leverage data that everybody sees; visionary data scientists leverage data that nobody sees.&rdquo; — Vincent Granville</p>
 </blockquote>
-<h3 id="5-you-cant-become-a-great-cook-overnight">
-    <a href="#5-you-cant-become-a-great-cook-overnight" class="anchor">
-        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
-            <path fill-rule="evenodd"
-                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
-            </path>
-        </svg>
-    </a>
-    5. You can&#39;t become a great cook overnight
+<h3 id=5-you-cant-become-a-great-cook-overnight>
+<a href=#5-you-cant-become-a-great-cook-overnight class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
+</a>
+5. You can't become a great cook overnight
 </h3>
-<p><img loading="lazy" 
-    src="https://miro.medium.com/max/1050/0*Oqm2iJ_OtDHz-clz" 
-    alt="" 
-     /></p>
+<p><img loading=lazy src=https://miro.medium.com/max/1050/0*Oqm2iJ_OtDHz-clz alt></p>
 <p>You can cook something by watching a video or reading the recipe from a blog. But, it doesn't really make you a great cook. Similarly, you can do some data analysis or modeling by copying code, but that won't make you a great data scientist. Likewise, completing a course or earning a certificate won't make you a great chef, and it won't make you a great data scientist either. It takes years of dedication, effort, and practice. Data science is a journey, not a destination.</p>
 <blockquote>
 <p>&ldquo;Learning data science is like going to the gym, you only benefit if you do it consistently.&rdquo; — Moez Ali, Creator of PyCaret</p>
 </blockquote>
-
-    </div>
 </div>
-
-<div class="container">
-    
-    <nav class="flex container suggested">
-        
-        <a rel="prev" href="https://richardcsuwandi.github.io/blog/posts/7-habits/" title="Previous post (older)">
-            <span>Previous</span>
-            7 Habits of an Effective Data Scientist
-            </a>
-        
-        
-        
-        <a rel="next" href="https://richardcsuwandi.github.io/blog/posts/lego/" title="Next post (newer)">
-            <span>Next</span>
-            Data is the New Lego
-            </a> 
-        
-    </nav>
-    
 </div>
- 
-<div class="container">
-    
+<div class=container>
+<nav class="flex container suggested">
+<a rel=prev href=https://richardcsuwandi.github.io/blog/posts/7-habits/ title="Previous post (older)">
+<span>Previous</span>
+7 Habits of an Effective Data Scientist
+</a>
+<a rel=next href=https://richardcsuwandi.github.io/blog/posts/lego/ title="Next post (newer)">
+<span>Next</span>
+Data is the New Lego
+</a>
+</nav>
 </div>
-
+<div class=container>
+</div>
 </main>
-
-
-        </main>
-        <footer class="footer flex">
-    <section class="container">
-        <nav class="footer-links">
-            
-        </nav>
-    </section>
-    <script defer src="https://richardcsuwandi.github.io/blog/ts/features.5b0e1ea6de1458adc3d83cf2550066d995b148f384d34a9c1ddad2dd7d0fe110.js" data-enable-footnotes="true"></script>
+</main>
+<footer class="footer flex">
+<section class=container>
+<nav class=footer-links>
+</nav>
+</section>
+<script defer src=https://richardcsuwandi.github.io/blog/ts/features.5b0e1ea6de1458adc3d83cf2550066d995b148f384d34a9c1ddad2dd7d0fe110.js data-enable-footnotes=true></script>
 </footer>
-    </body>
+</body>
 </html>
