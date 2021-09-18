@@ -1,17 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Richard&#39;s Blog</title>
-    <link>https://example.com/</link>
+    <link>https://richardcsuwandi.github.io/blog/</link>
     <description>Recent content on Richard&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://richardcsuwandi.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
     <title>Why the Future of AI is Federated</title>
-    <link>https://example.com/posts/federated-learning/</link>
+    <link>https://richardcsuwandi.github.io/blog/posts/federated-learning/</link>
     <pubDate>Wed, 25 Aug 2021 00:00:00 +0000</pubDate>
     
-    <guid>https://example.com/posts/federated-learning/</guid>
+    <guid>https://richardcsuwandi.github.io/blog/posts/federated-learning/</guid>
     <description>
         &lt;p&gt;As technology advances, AI is becoming more and more integrated into our lives. Numerous industries and companies are using AI to improve their products and services. For instance, Google uses machine learning to build &lt;a href=&#34;https://policies.google.com/technologies/partner-sites?hl=en-US&#34;&gt;personalized services&lt;/a&gt; and maximize  user experiences. Unfortunately, it also comes with a challenge as such models need to be trained on tons of personal data in order to perform well. This certainly becomes an issue as we are increasingly concerned about privacy. Here&amp;rsquo;s where federated learning comes to play.&lt;/p&gt;
 &lt;p&gt;In this blog post, I will introduce the concept of federated learning, why it matters, and how it could potentially shape the future of AI.&lt;/p&gt;
@@ -95,10 +95,10 @@
     
     <item>
     <title>Why is AI So Smart and Yet So Dumb?</title>
-    <link>https://example.com/posts/moravec/</link>
+    <link>https://richardcsuwandi.github.io/blog/posts/moravec/</link>
     <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
     
-    <guid>https://example.com/posts/moravec/</guid>
+    <guid>https://richardcsuwandi.github.io/blog/posts/moravec/</guid>
     <description>
         &lt;p&gt;Have you ever wondered why AI has such an easy time doing stuff that we find very hard? But having a hard time doing stuff that we find very easy?&lt;/p&gt;
 &lt;h3 id=&#34;moravecs-paradox&#34;&gt;
@@ -196,10 +196,10 @@ More advanced AI is starting to mimic our evolutionary abilities. For instance, 
     
     <item>
     <title>Data is the New Lego</title>
-    <link>https://example.com/posts/lego/</link>
+    <link>https://richardcsuwandi.github.io/blog/posts/lego/</link>
     <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
     
-    <guid>https://example.com/posts/lego/</guid>
+    <guid>https://richardcsuwandi.github.io/blog/posts/lego/</guid>
     <description>
         &lt;p&gt;When I was a kid, I used to love playing with Lego. My brother and I built almost all kinds of stuff with Lego — animals, cars, houses, and even spaceships. As time went on, our creations became more ambitious and realistic. There were also times when we could each have insisted that our Lego was our own, till we realized that pooling resources would eventually help us went further. We were growing up too, and as our playing became more sophisticated, we learned how to make better models.&lt;/p&gt;
 &lt;p&gt;As an aspiring data scientist, I realized that working with data is surprisingly a lot like my childhood Lego memories. In this blog post, I want to share some of the memories I’ve had that show how playing with Lego and working with data are closer than you think.&lt;/p&gt;
@@ -313,10 +313,10 @@ Anyone who deals with data knows that as much as 80% of the process is cleaning 
     
     <item>
     <title>5 Reasons Why Data Science Is Like Cooking</title>
-    <link>https://example.com/posts/5-reasons/</link>
+    <link>https://richardcsuwandi.github.io/blog/posts/5-reasons/</link>
     <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
     
-    <guid>https://example.com/posts/5-reasons/</guid>
+    <guid>https://richardcsuwandi.github.io/blog/posts/5-reasons/</guid>
     <description>
         &lt;p&gt;Data science is a lot like cooking. Although raw ingredients may be fascinating at first, the fun doesn’t start until you’re actually able to start slicing, dicing, and eventually serving up something delicious to devour. Most of the time, you’ll end up with a dish, but in the data science world, we call it data insights. In this blog post, I want to share 5 analogies of data science to cooking which helped me understand the field better.&lt;/p&gt;
 &lt;h3 id=&#34;1-without-good-ingredients-you-cant-cook-a-good-dish&#34;&gt;
@@ -415,10 +415,10 @@ Anyone who deals with data knows that as much as 80% of the process is cleaning 
     
     <item>
     <title>7 Habits of an Effective Data Scientist</title>
-    <link>https://example.com/posts/7-habits/</link>
+    <link>https://richardcsuwandi.github.io/blog/posts/7-habits/</link>
     <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
     
-    <guid>https://example.com/posts/7-habits/</guid>
+    <guid>https://richardcsuwandi.github.io/blog/posts/7-habits/</guid>
     <description>
         &lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;What you do every day = who you are.&amp;rdquo;&lt;/p&gt;

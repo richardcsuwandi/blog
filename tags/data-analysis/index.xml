@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>data-analysis on Richard&#39;s Blog</title>
-    <link>https://example.com/tags/data-analysis/</link>
+    <link>https://richardcsuwandi.github.io/blog/tags/data-analysis/</link>
     <description>Recent content in data-analysis on Richard&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/data-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://richardcsuwandi.github.io/blog/tags/data-analysis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5 Reasons Why Data Science Is Like Cooking</title>
-      <link>https://example.com/posts/5-reasons/</link>
+      <link>https://richardcsuwandi.github.io/blog/posts/5-reasons/</link>
       <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/5-reasons/</guid>
+      <guid>https://richardcsuwandi.github.io/blog/posts/5-reasons/</guid>
       <description>Data science is a lot like cooking. Although raw ingredients may be fascinating at first, the fun doesn’t start until you’re actually able to start slicing, dicing, and eventually serving up something delicious to devour. Most of the time, you’ll end up with a dish, but in the data science world, we call it data insights. In this blog post, I want to share 5 analogies of data science to cooking which helped me understand the field better.</description>
     </item>
     
