@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>productivity on Richard&#39;s Blog</title>
+    <link>https://example.com/tags/productivity/</link>
+    <description>Recent content in productivity on Richard&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>7 Habits of an Effective Data Scientist</title>
+      <link>https://example.com/posts/7-habits/</link>
+      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/7-habits/</guid>
+      <description>&amp;ldquo;What you do every day = who you are.&amp;rdquo;
+ As an aspiring data scientist, I realized the importance of the habits that we do every day, both consciously and unconsciously. During that period of realization, I found one of the best self-mastery books — &amp;ldquo;The 7 Habits of Highly Effective People&amp;rdquo; by Stephen R. Covey. As the title suggests, the book elaborates on the 7 habits of the planet’s highly effective people.</description>
+    </item>
+    
+  </channel>
+</rss>

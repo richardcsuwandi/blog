@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>federated-learning on Richard&#39;s Blog</title>
+    <link>https://example.com/tags/federated-learning/</link>
+    <description>Recent content in federated-learning on Richard&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/federated-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why the Future of AI is Federated</title>
+      <link>https://example.com/posts/federated-learning/</link>
+      <pubDate>Wed, 25 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/federated-learning/</guid>
+      <description>As technology advances, AI is becoming more and more integrated into our lives. Numerous industries and companies are using AI to improve their products and services. For instance, Google uses machine learning to build personalized services and maximize user experiences. Unfortunately, it also comes with a challenge as such models need to be trained on tons of personal data in order to perform well. This certainly becomes an issue as we are increasingly concerned about privacy.</description>
+    </item>
+    
+  </channel>
+</rss>

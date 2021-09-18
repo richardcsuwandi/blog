@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Richard&#39;s Blog</title>
+    <link>https://example.com/posts/</link>
+    <description>Recent content in Posts on Richard&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why the Future of AI is Federated</title>
+      <link>https://example.com/posts/federated-learning/</link>
+      <pubDate>Wed, 25 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/federated-learning/</guid>
+      <description>As technology advances, AI is becoming more and more integrated into our lives. Numerous industries and companies are using AI to improve their products and services. For instance, Google uses machine learning to build personalized services and maximize user experiences. Unfortunately, it also comes with a challenge as such models need to be trained on tons of personal data in order to perform well. This certainly becomes an issue as we are increasingly concerned about privacy.</description>
+    </item>
+    
+    <item>
+      <title>Why is AI So Smart and Yet So Dumb?</title>
+      <link>https://example.com/posts/moravec/</link>
+      <pubDate>Sun, 30 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/moravec/</guid>
+      <description>Have you ever wondered why AI has such an easy time doing stuff that we find very hard? But having a hard time doing stuff that we find very easy?
+Moravec&amp;amp;rsquo;s ParadoxIn the 1980s, an AI researcher named Hans Moravec wondered the exact same thing. As Moravec put it:
+ &amp;ldquo;It is comparatively easy to make computers exhibit adult level performance on intelligence tests or playing checkers, and difficult or impossible to give them the skills of a one-year-old when it comes to perception and mobility.</description>
+    </item>
+    
+    <item>
+      <title>Data is the New Lego</title>
+      <link>https://example.com/posts/lego/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/lego/</guid>
+      <description>When I was a kid, I used to love playing with Lego. My brother and I built almost all kinds of stuff with Lego — animals, cars, houses, and even spaceships. As time went on, our creations became more ambitious and realistic. There were also times when we could each have insisted that our Lego was our own, till we realized that pooling resources would eventually help us went further. We were growing up too, and as our playing became more sophisticated, we learned how to make better models.</description>
+    </item>
+    
+    <item>
+      <title>5 Reasons Why Data Science Is Like Cooking</title>
+      <link>https://example.com/posts/5-reasons/</link>
+      <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/5-reasons/</guid>
+      <description>Data science is a lot like cooking. Although raw ingredients may be fascinating at first, the fun doesn’t start until you’re actually able to start slicing, dicing, and eventually serving up something delicious to devour. Most of the time, you’ll end up with a dish, but in the data science world, we call it data insights. In this blog post, I want to share 5 analogies of data science to cooking which helped me understand the field better.</description>
+    </item>
+    
+    <item>
+      <title>7 Habits of an Effective Data Scientist</title>
+      <link>https://example.com/posts/7-habits/</link>
+      <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/7-habits/</guid>
+      <description>&amp;ldquo;What you do every day = who you are.&amp;rdquo;
+ As an aspiring data scientist, I realized the importance of the habits that we do every day, both consciously and unconsciously. During that period of realization, I found one of the best self-mastery books — &amp;ldquo;The 7 Habits of Highly Effective People&amp;rdquo; by Stephen R. Covey. As the title suggests, the book elaborates on the 7 habits of the planet’s highly effective people.</description>
+    </item>
+    
+  </channel>
+</rss>

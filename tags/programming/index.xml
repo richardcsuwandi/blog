@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on Richard&#39;s Blog</title>
+    <link>https://example.com/tags/programming/</link>
+    <description>Recent content in programming on Richard&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data is the New Lego</title>
+      <link>https://example.com/posts/lego/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/posts/lego/</guid>
+      <description>When I was a kid, I used to love playing with Lego. My brother and I built almost all kinds of stuff with Lego — animals, cars, houses, and even spaceships. As time went on, our creations became more ambitious and realistic. There were also times when we could each have insisted that our Lego was our own, till we realized that pooling resources would eventually help us went further. We were growing up too, and as our playing became more sophisticated, we learned how to make better models.</description>
+    </item>
+    
+  </channel>
+</rss>
