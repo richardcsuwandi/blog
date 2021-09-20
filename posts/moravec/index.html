@@ -1,87 +1,148 @@
-<!doctype html><html lang=en-us>
+<!DOCTYPE html>
+<html lang="en-us">
+    
 <head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=theme-color content="dark">
-<title>Why Is AI So Smart and Yet So Dumb? | Richard's Blog</title>
-<meta property="og:site_name" content>
-<meta property="og:title" content="Why Is AI So Smart and Yet So Dumb? | Richard's Blog">
-<meta itemprop=name content="Why Is AI So Smart and Yet So Dumb? | Richard's Blog">
-<meta name=twitter:title content="Why Is AI So Smart and Yet So Dumb? | Richard's Blog">
-<meta name=application-name content="Why Is AI So Smart and Yet So Dumb? | Richard's Blog">
-<meta name=description content>
-<meta name=twitter:description content>
-<meta itemprop=description content>
-<meta property="og:description" content>
-<link rel="shortcut icon" type=image/x-icon href=https://richardcsuwandi.github.io/blog/favicon.ico>
-<link rel=stylesheet href=https://richardcsuwandi.github.io/blog/sass/main.min.dca40d853c3d06706aaa6f0ae6aeb36bb27369100ac7e478776cfff9b4ac4d4e.css>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="dark">
+    <title>Why Is AI So Smart and Yet So Dumb? | Richard&#39;s Blog</title>
+
+    
+    
+    
+    <meta property="og:site_name" content="Richard&#39;s Blog" />
+    <meta property="og:title" content="Why Is AI So Smart and Yet So Dumb? | Richard&#39;s Blog"/>
+    <meta itemprop="name" content="Why Is AI So Smart and Yet So Dumb? | Richard&#39;s Blog" />
+    <meta name="twitter:title" content="Why Is AI So Smart and Yet So Dumb? | Richard&#39;s Blog" />
+    <meta name="application-name" content="Why Is AI So Smart and Yet So Dumb? | Richard&#39;s Blog" />
+
+
+    <meta name="description" content="This blog is a convex combination of data science, machine learning, and AI." />
+    <meta name="twitter:description" content="This blog is a convex combination of data science, machine learning, and AI."/>
+    <meta itemprop="description" content="This blog is a convex combination of data science, machine learning, and AI."/>
+    <meta property="og:description" content="This blog is a convex combination of data science, machine learning, and AI." />
+
+    
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://richardcsuwandi.github.io/blog/favicon.ico" />
+    
+    <link rel="stylesheet" href="https://richardcsuwandi.github.io/blog/sass/main.min.dca40d853c3d06706aaa6f0ae6aeb36bb27369100ac7e478776cfff9b4ac4d4e.css">
+    
 </head>
-<script>(function(){const b='ThemeColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.userColorScheme='dark':document.documentElement.dataset.userColorScheme='light'})()</script>
-<body class=dark>
-<nav class=navbar>
-<div class=container>
-<div class=flex>
-<div>
-<a class=brand href=https://richardcsuwandi.github.io/blog/>
-Richard's Blog
-</a>
-</div>
-<div class=flex>
-<a href=https://richardcsuwandi.github.io/blog/posts/>Posts</a>
-<button id=dark-mode-button><svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)" viewBox="0 0 36 36"><path fill="#ffd983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163.0 101.643 1.641 1.163 1.163.0 00-1.643-1.641zm-16.022 14.38a1.74 1.74.0 000 2.465 1.742 1.742.0 100-2.465zm13.968-2.147a2.904 2.904.0 01-4.108.0 2.902 2.902.0 010-4.107 2.902 2.902.0 014.108.0 2.902 2.902.0 010 4.107z" fill="#ffcc4d"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)"/></svg><svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)" viewBox="0 0 36 36"><path fill="#ffd983" d="M16 2s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2V2zm18 14s2 0 2 2-2 2-2 2h-2s-2 0-2-2 2-2 2-2h2zM4 16s2 0 2 2-2 2-2 2H2s-2 0-2-2 2-2 2-2h2zm5.121-8.707s1.414 1.414.0 2.828-2.828.0-2.828.0L4.878 8.708s-1.414-1.414.0-2.829c1.415-1.414 2.829.0 2.829.0l1.414 1.414zm21 21s1.414 1.414.0 2.828-2.828.0-2.828.0l-1.414-1.414s-1.414-1.414.0-2.828 2.828.0 2.828.0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828.0.0-2.828.0-2.828l1.414-1.414s1.414-1.414 2.828.0.0 2.828.0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828.0.0-2.828.0-2.828l1.414-1.414s1.414-1.414 2.828.0.0 2.828.0 2.828l-1.414 1.414zM16 32s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2v-2z"/><circle fill="#ffd983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)"/></svg>
-</button>
-</div>
-</div>
-</div>
+    <script>
+    (function() {
+        const colorSchemeKey = 'ThemeColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.userColorScheme = 'dark';
+        } else {
+            document.documentElement.dataset.userColorScheme = 'light';
+        }
+    })();
+</script>
+
+    <body class="dark">
+        <nav class="navbar">
+    <div class="container">
+        <div class="flex">
+            <div>
+                <a class="brand" href="https://richardcsuwandi.github.io/blog/">
+                    
+                    
+                    Richard&#39;s Blog
+                    </a>
+            </div>
+            <div class="flex">
+                
+                <a href="https://richardcsuwandi.github.io/blog/posts/">Posts</a>
+                
+                <button id="dark-mode-button">
+                  <svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163 0 1 0 1.643 1.641a1.163 1.163 0 0 0-1.643-1.641zm-16.022 14.38a1.74 1.74 0 0 0 0 2.465a1.742 1.742 0 1 0 0-2.465zm13.968-2.147a2.904 2.904 0 0 1-4.108 0a2.902 2.902 0 0 1 0-4.107a2.902 2.902 0 0 1 4.108 0a2.902 2.902 0 0 1 0 4.107z" fill="#FFCC4D"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                  <svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M16 2s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2V2zm18 14s2 0 2 2s-2 2-2 2h-2s-2 0-2-2s2-2 2-2h2zM4 16s2 0 2 2s-2 2-2 2H2s-2 0-2-2s2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828s-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828s-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828s2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2v-2z"/><circle fill="#FFD983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                </button>
+            </div>
+            </div>
+    </div>
 </nav>
-<main>
-<div class=container>
-<article>
-<header class=article-header>
-<div class=thumb>
-<div>
-<h1>Why Is AI So Smart and Yet So Dumb?</h1>
-<div class=post-meta>
-<div>
-By Richard Cornelius Suwandi | <time>August 30, 2020</time>
-| 4 minutes
-</div>
-<div class=tags>
-<a href=https://richardcsuwandi.github.io/blog/tags/artificial-intelligence/>artificial-intelligence</a>
-<a href=https://richardcsuwandi.github.io/blog/tags/machine-learning/>machine-learning</a>
-<a href=https://richardcsuwandi.github.io/blog/tags/technology/>technology</a>
-</div>
-</div>
-</div>
-</div>
-</header>
-</article>
-<div class=article-post>
-<p>Have you ever wondered why AI has such an easy time doing stuff that we find very hard? But having a hard time doing stuff that we find very easy?</p>
-<h3 id=moravecs-paradox>
-<a href=#moravecs-paradox class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
-</a>
-Moravec's Paradox
+        <main>
+            
+<div class="container">
+    <article>
+        <header class="article-header">
+            <div class="thumb">
+                <div>
+                    <h1>Why Is AI So Smart and Yet So Dumb?</h1>
+                    <div class="post-meta">
+                        <div>
+                            
+                            
+                              
+                            
+                            By Richard Cornelius Suwandi | <time>August 30, 2020</time>
+                            | 4 minutes
+                        </div>
+                        <div class="tags">
+                            
+                            <a href="https://richardcsuwandi.github.io/blog/tags/artificial-intelligence/">artificial-intelligence</a>
+                            
+                            <a href="https://richardcsuwandi.github.io/blog/tags/machine-learning/">machine-learning</a>
+                            
+                            <a href="https://richardcsuwandi.github.io/blog/tags/technology/">technology</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </article>
+
+    <div class="article-post">
+    <p>Have you ever wondered why AI has such an easy time doing stuff that we find very hard? But having a hard time doing stuff that we find very easy?</p>
+<h3 id="moravecs-paradox">
+    <a href="#moravecs-paradox" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Moravec&#39;s Paradox
 </h3>
-<p><img loading=lazy src=https://miro.medium.com/max/1400/0*i8tsg8NKBmg1DEcU alt></p>
-<p>In the 1980s, an AI researcher named <a href=https://en.wikipedia.org/wiki/Hans_Moravec>Hans Moravec</a> wondered the exact same thing. As Moravec put it:</p>
+<p><img loading="lazy" 
+    src="https://miro.medium.com/max/1400/0*i8tsg8NKBmg1DEcU" 
+    alt="" 
+     /></p>
+<p>In the 1980s, an AI researcher named <a href="https://en.wikipedia.org/wiki/Hans_Moravec">Hans Moravec</a> wondered the exact same thing. As Moravec put it:</p>
 <blockquote>
 <p>&ldquo;It is comparatively easy to make computers exhibit adult level performance on intelligence tests or playing checkers, and difficult or impossible to give them the skills of a one-year-old when it comes to perception and mobility.&rdquo;</p>
 </blockquote>
-<p>This curious observation was later known as <a href=https://en.wikipedia.org/wiki/Moravec%27s_paradox>Moravec&rsquo;s Paradox</a>. And even though it was formulated more than 30 years ago, it is still relevant today.</p>
-<p>Don't get me wrong, AI certainly has come a long way. We've seen AI beating the world champion in the board game <a href=https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol>Go</a>, the quiz game <a href=https://www.eetimes.com/ibms-watson-computer-beats-humans-at-jeopardy/>Jeopardy</a>, the card game <a href=https://www.sciencedaily.com/releases/2019/07/190711141343.htm>Poker</a>, and the video game <a href=https://www.vice.com/en_us/article/gy3nvq/ai-beat-humans-at-dota-2>Dota 2</a>. But on the flip side, AI is still having a hard time <a href=https://unbabel.com/blog/ai-humor/>understanding a joke</a> or <a href=https://business.blogthinkbig.com/can-artificial-intelligence-understand-emotions/>interpreting people&rsquo;s emotions</a>.
+<p>This curious observation was later known as <a href="https://en.wikipedia.org/wiki/Moravec%27s_paradox">Moravec&rsquo;s Paradox</a>. And even though it was formulated more than 30 years ago, it is still relevant today.</p>
+<p>Don't get me wrong, AI certainly has come a long way. We've seen AI beating the world champion in the board game <a href="https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol">Go</a>, the quiz game <a href="https://www.eetimes.com/ibms-watson-computer-beats-humans-at-jeopardy/">Jeopardy</a>, the card game <a href="https://www.sciencedaily.com/releases/2019/07/190711141343.htm">Poker</a>, and the video game <a href="https://www.vice.com/en_us/article/gy3nvq/ai-beat-humans-at-dota-2">Dota 2</a>. But on the flip side, AI is still having a hard time <a href="https://unbabel.com/blog/ai-humor/">understanding a joke</a> or <a href="https://business.blogthinkbig.com/can-artificial-intelligence-understand-emotions/">interpreting people&rsquo;s emotions</a>.
 Therefore, the big question is:</p>
 <blockquote>
 <p>&ldquo;Why does AI struggle with the simple?&rdquo;</p>
 </blockquote>
-<h3 id=the-reason-behind-moravecs-paradox>
-<a href=#the-reason-behind-moravecs-paradox class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
-</a>
-The reason behind Moravec's Paradox
+<h3 id="the-reason-behind-moravecs-paradox">
+    <a href="#the-reason-behind-moravecs-paradox" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    The reason behind Moravec&#39;s Paradox
 </h3>
-<p><img loading=lazy src=https://miro.medium.com/max/1400/0*RNGml_mGrYjXrvsG alt></p>
-<p>At the most basic level, the reason for Moravec's Paradox is simple: We don't know how to program general intelligence (yet). We're already good at getting AI to do specific things, but most toddler level skills require learning new things and transferring them into different contexts. And to get machines to do this is actually one of the goals of <a href=https://en.wikipedia.org/wiki/Artificial_general_intelligence>Artificial General Intelligence (AGI)</a>.</p>
+<p><img loading="lazy" 
+    src="https://miro.medium.com/max/1400/0*RNGml_mGrYjXrvsG" 
+    alt="" 
+     /></p>
+<p>At the most basic level, the reason for Moravec's Paradox is simple: We don't know how to program general intelligence (yet). We're already good at getting AI to do specific things, but most toddler level skills require learning new things and transferring them into different contexts. And to get machines to do this is actually one of the goals of <a href="https://en.wikipedia.org/wiki/Artificial_general_intelligence">Artificial General Intelligence (AGI)</a>.</p>
 <blockquote>
 <p>&ldquo;Today's AI is brilliant at very narrow competencies, whereas humans are good at pretty much everything.&rdquo; — Dr. Sean Holden, Cambridge University</p>
 </blockquote>
@@ -89,53 +150,87 @@ The reason behind Moravec's Paradox
 <blockquote>
 <p>&ldquo;The oldest human skills are largely unconscious and they appear to us to be effortless. Consequently, it should not be a surprise that the skills that appear effortless, to be computation-heavy and difficult to be reverse-engineered by a man-made AI system.&rdquo;</p>
 </blockquote>
-<p><img loading=lazy src=https://miro.medium.com/max/1050/0*NqiTQOsJxRjMsNkA alt></p>
+<p><img loading="lazy" 
+    src="https://miro.medium.com/max/1050/0*NqiTQOsJxRjMsNkA" 
+    alt="" 
+     /></p>
 <p>Moreover, the only way that we can teach an AI is by giving it a set of instructions to do a certain task. And since we've learned consciously how to do maths and win games, we know the exact steps needed to complete these tasks. Thus, we are able to teach these to an AI.</p>
 <p>But how can you teach an AI to actually see, hear, or smell something? We don't know all the steps required to do these tasks consciously. In fact, we need to break these tasks into logical steps to feed into an AI. Hence, it is incredibly difficult to teach these to an AI.</p>
-<h3 id=what-moravecs-paradox-actually-taught-us>
-<a href=#what-moravecs-paradox-actually-taught-us class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
-</a>
-What Moravec's Paradox actually taught us
+<h3 id="what-moravecs-paradox-actually-taught-us">
+    <a href="#what-moravecs-paradox-actually-taught-us" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    What Moravec&#39;s Paradox actually taught us
 </h3>
-<p><img loading=lazy src=https://miro.medium.com/max/1400/0*HDj1u5bx0i2XHz4j alt></p>
+<p><img loading="lazy" 
+    src="https://miro.medium.com/max/1400/0*HDj1u5bx0i2XHz4j" 
+    alt="" 
+     /></p>
 <p>Moravec's Paradox has surely proven to us one thing— the fact that we've developed an AI that has beaten humans in Go or Chess doesn't mean that AGI is just around the corner. But yes, we are one step closer.
 It also shows why adult-level reasoning capable AI is an old hat, but AI with vision, listening, and learning capabilities are new and exciting. Of course, things are shifting, as AI is overcoming the Moravec's Paradox.
-More advanced AI is starting to mimic our evolutionary abilities. For instance, we've seen advancements in the <a href=https://en.wikipedia.org/wiki/Computer_vision>Computer Vision</a> field such as object detection and facial recognition, which could be thought of as the equivalent of sight for a computer. Also, thanks to <a href=https://en.wikipedia.org/wiki/Natural_language_processing>Natural Language Processing (NLP)</a>, we now have personal assistants like <a href=https://en.wikipedia.org/wiki/Amazon_Alexa>Alexa</a> that are capable of ‘hearing' and understanding us. Likewise, AI is becoming capable of speech, like we've seen in these assistants or developments like <a href=https://ai.googleblog.com/2018/05/duplex-ai-system-for-natural-conversation.html>Google Duplex</a>.</p>
-<h3 id=the-impact-of-moravecs-paradox-and-the-future-of-ai>
-<a href=#the-impact-of-moravecs-paradox-and-the-future-of-ai class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
-</a>
-The impact of Moravec's Paradox and the future of AI
+More advanced AI is starting to mimic our evolutionary abilities. For instance, we've seen advancements in the <a href="https://en.wikipedia.org/wiki/Computer_vision">Computer Vision</a> field such as object detection and facial recognition, which could be thought of as the equivalent of sight for a computer. Also, thanks to <a href="https://en.wikipedia.org/wiki/Natural_language_processing">Natural Language Processing (NLP)</a>, we now have personal assistants like <a href="https://en.wikipedia.org/wiki/Amazon_Alexa">Alexa</a> that are capable of ‘hearing' and understanding us. Likewise, AI is becoming capable of speech, like we've seen in these assistants or developments like <a href="https://ai.googleblog.com/2018/05/duplex-ai-system-for-natural-conversation.html">Google Duplex</a>.</p>
+<h3 id="the-impact-of-moravecs-paradox-and-the-future-of-ai">
+    <a href="#the-impact-of-moravecs-paradox-and-the-future-of-ai" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    The impact of Moravec&#39;s Paradox and the future of AI
 </h3>
-<p><img loading=lazy src=https://miro.medium.com/max/1400/0*mtmyHO5yCOuWxb5M alt></p>
+<p><img loading="lazy" 
+    src="https://miro.medium.com/max/1400/0*mtmyHO5yCOuWxb5M" 
+    alt="" 
+     /></p>
 <p>While the ultimate goal of achieving AGI remains elusive, Moravec's Paradox has brought a significant impact on our present world. Contrary to the traditional assumptions, it suggests that reasoning which is high-level in humans requires very little computational power. On the other hand, sensorimotor skills which are comparatively low-level in humans require enormous computational power. With this in mind, as computational power increases, machines could eventually match and exceed human capability.</p>
 <p>Ultimately, AI has seen highs and lows. It's a field that is constantly saturated with ethical questions and scientific challenges. And although research on multitasking machines and AI with transferable skills is heating up, the debate remains on whether true human-level intelligence in machines is feasible (or desirable).</p>
 <blockquote>
 <p>&ldquo;No computer has ever been designed that is ever aware of what it's doing; but most of the time, we aren't either.&rdquo; — Marvin Minsky</p>
 </blockquote>
+
+    </div>
 </div>
+
+<div class="container">
+    
+    <nav class="flex container suggested">
+        
+        <a rel="prev" href="https://richardcsuwandi.github.io/blog/posts/lego/" title="Previous post (older)">
+            <span>Previous</span>
+            Data is the New Lego
+            </a>
+        
+        
+        
+        <a rel="next" href="https://richardcsuwandi.github.io/blog/posts/linkedin-analysis/" title="Next post (newer)">
+            <span>Next</span>
+            Analyzing My Own LinkedIn Data
+            </a> 
+        
+    </nav>
+    
 </div>
-<div class=container>
-<nav class="flex container suggested">
-<a rel=prev href=https://richardcsuwandi.github.io/blog/posts/lego/ title="Previous post (older)">
-<span>Previous</span>
-Data is the New Lego
-</a>
-<a rel=next href=https://richardcsuwandi.github.io/blog/posts/linkedin-analysis/ title="Next post (newer)">
-<span>Next</span>
-Analyzing My Own LinkedIn Data
-</a>
-</nav>
+ 
+<div class="container">
+    
 </div>
-<div class=container>
-</div>
+
 </main>
-</main>
-<footer class="footer flex">
-<section class=container>
-<nav class=footer-links>
-</nav>
-</section>
-<script defer src=https://richardcsuwandi.github.io/blog/ts/features.5b0e1ea6de1458adc3d83cf2550066d995b148f384d34a9c1ddad2dd7d0fe110.js data-enable-footnotes=true></script>
+
+
+        </main>
+        <footer class="footer flex">
+    <section class="container">
+        <nav class="footer-links">
+            
+        </nav>
+    </section>
+    <script defer src="https://richardcsuwandi.github.io/blog/ts/features.5b0e1ea6de1458adc3d83cf2550066d995b148f384d34a9c1ddad2dd7d0fe110.js" data-enable-footnotes="true"></script>
 </footer>
-</body>
+    </body>
 </html>

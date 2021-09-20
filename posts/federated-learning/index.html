@@ -1,76 +1,132 @@
-<!doctype html><html lang=en-us>
+<!DOCTYPE html>
+<html lang="en-us">
+    
 <head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=theme-color content="dark">
-<title>Why the Future of AI is Federated | Richard's Blog</title>
-<meta property="og:site_name" content>
-<meta property="og:title" content="Why the Future of AI is Federated | Richard's Blog">
-<meta itemprop=name content="Why the Future of AI is Federated | Richard's Blog">
-<meta name=twitter:title content="Why the Future of AI is Federated | Richard's Blog">
-<meta name=application-name content="Why the Future of AI is Federated | Richard's Blog">
-<meta name=description content>
-<meta name=twitter:description content>
-<meta itemprop=description content>
-<meta property="og:description" content>
-<link rel="shortcut icon" type=image/x-icon href=https://richardcsuwandi.github.io/blog/favicon.ico>
-<link rel=stylesheet href=https://richardcsuwandi.github.io/blog/sass/main.min.dca40d853c3d06706aaa6f0ae6aeb36bb27369100ac7e478776cfff9b4ac4d4e.css>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="dark">
+    <title>Why the Future of AI is Federated | Richard&#39;s Blog</title>
+
+    
+    
+    
+    <meta property="og:site_name" content="Richard&#39;s Blog" />
+    <meta property="og:title" content="Why the Future of AI is Federated | Richard&#39;s Blog"/>
+    <meta itemprop="name" content="Why the Future of AI is Federated | Richard&#39;s Blog" />
+    <meta name="twitter:title" content="Why the Future of AI is Federated | Richard&#39;s Blog" />
+    <meta name="application-name" content="Why the Future of AI is Federated | Richard&#39;s Blog" />
+
+
+    <meta name="description" content="This blog is a convex combination of data science, machine learning, and AI." />
+    <meta name="twitter:description" content="This blog is a convex combination of data science, machine learning, and AI."/>
+    <meta itemprop="description" content="This blog is a convex combination of data science, machine learning, and AI."/>
+    <meta property="og:description" content="This blog is a convex combination of data science, machine learning, and AI." />
+
+    
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://richardcsuwandi.github.io/blog/favicon.ico" />
+    
+    <link rel="stylesheet" href="https://richardcsuwandi.github.io/blog/sass/main.min.dca40d853c3d06706aaa6f0ae6aeb36bb27369100ac7e478776cfff9b4ac4d4e.css">
+    
 </head>
-<script>(function(){const b='ThemeColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.userColorScheme='dark':document.documentElement.dataset.userColorScheme='light'})()</script>
-<body class=dark>
-<nav class=navbar>
-<div class=container>
-<div class=flex>
-<div>
-<a class=brand href=https://richardcsuwandi.github.io/blog/>
-Richard's Blog
-</a>
-</div>
-<div class=flex>
-<a href=https://richardcsuwandi.github.io/blog/posts/>Posts</a>
-<button id=dark-mode-button><svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)" viewBox="0 0 36 36"><path fill="#ffd983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163.0 101.643 1.641 1.163 1.163.0 00-1.643-1.641zm-16.022 14.38a1.74 1.74.0 000 2.465 1.742 1.742.0 100-2.465zm13.968-2.147a2.904 2.904.0 01-4.108.0 2.902 2.902.0 010-4.107 2.902 2.902.0 014.108.0 2.902 2.902.0 010 4.107z" fill="#ffcc4d"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)"/></svg><svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg)" viewBox="0 0 36 36"><path fill="#ffd983" d="M16 2s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2V2zm18 14s2 0 2 2-2 2-2 2h-2s-2 0-2-2 2-2 2-2h2zM4 16s2 0 2 2-2 2-2 2H2s-2 0-2-2 2-2 2-2h2zm5.121-8.707s1.414 1.414.0 2.828-2.828.0-2.828.0L4.878 8.708s-1.414-1.414.0-2.829c1.415-1.414 2.829.0 2.829.0l1.414 1.414zm21 21s1.414 1.414.0 2.828-2.828.0-2.828.0l-1.414-1.414s-1.414-1.414.0-2.828 2.828.0 2.828.0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828.0.0-2.828.0-2.828l1.414-1.414s1.414-1.414 2.828.0.0 2.828.0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828.0.0-2.828.0-2.828l1.414-1.414s1.414-1.414 2.828.0.0 2.828.0 2.828l-1.414 1.414zM16 32s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2v-2z"/><circle fill="#ffd983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)"/></svg>
-</button>
-</div>
-</div>
-</div>
+    <script>
+    (function() {
+        const colorSchemeKey = 'ThemeColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.userColorScheme = 'dark';
+        } else {
+            document.documentElement.dataset.userColorScheme = 'light';
+        }
+    })();
+</script>
+
+    <body class="dark">
+        <nav class="navbar">
+    <div class="container">
+        <div class="flex">
+            <div>
+                <a class="brand" href="https://richardcsuwandi.github.io/blog/">
+                    
+                    
+                    Richard&#39;s Blog
+                    </a>
+            </div>
+            <div class="flex">
+                
+                <a href="https://richardcsuwandi.github.io/blog/posts/">Posts</a>
+                
+                <button id="dark-mode-button">
+                  <svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163 0 1 0 1.643 1.641a1.163 1.163 0 0 0-1.643-1.641zm-16.022 14.38a1.74 1.74 0 0 0 0 2.465a1.742 1.742 0 1 0 0-2.465zm13.968-2.147a2.904 2.904 0 0 1-4.108 0a2.902 2.902 0 0 1 0-4.107a2.902 2.902 0 0 1 4.108 0a2.902 2.902 0 0 1 0 4.107z" fill="#FFCC4D"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                  <svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M16 2s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2V2zm18 14s2 0 2 2s-2 2-2 2h-2s-2 0-2-2s2-2 2-2h2zM4 16s2 0 2 2s-2 2-2 2H2s-2 0-2-2s2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828s-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828s-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828s2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2v-2z"/><circle fill="#FFD983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                </button>
+            </div>
+            </div>
+    </div>
 </nav>
-<main>
-<div class=container>
-<article>
-<header class=article-header>
-<div class=thumb>
-<div>
-<h1>Why the Future of AI is Federated</h1>
-<div class=post-meta>
-<div>
-By Richard Cornelius Suwandi | <time>August 25, 2021</time>
-| 4 minutes
-</div>
-<div class=tags>
-<a href=https://richardcsuwandi.github.io/blog/tags/federated-learning/>federated-learning</a>
-<a href=https://richardcsuwandi.github.io/blog/tags/machine-learning/>machine-learning</a>
-<a href=https://richardcsuwandi.github.io/blog/tags/artificial-intelligence/>artificial-intelligence</a>
-</div>
-</div>
-</div>
-</div>
-</header>
-</article>
-<div class=article-post>
-<p>As technology advances, AI is becoming more and more integrated into our lives. Numerous industries and companies are using AI to improve their products and services. For instance, Google uses machine learning to build <a href="https://policies.google.com/technologies/partner-sites?hl=en-US">personalized services</a> and maximize user experiences. Unfortunately, it also comes with a challenge as such models need to be trained on tons of personal data in order to perform well. This certainly becomes an issue as we are increasingly concerned about privacy. Here&rsquo;s where federated learning comes to play.</p>
+        <main>
+            
+<div class="container">
+    <article>
+        <header class="article-header">
+            <div class="thumb">
+                <div>
+                    <h1>Why the Future of AI is Federated</h1>
+                    <div class="post-meta">
+                        <div>
+                            
+                            
+                              
+                            
+                            By Richard Cornelius Suwandi | <time>August 25, 2021</time>
+                            | 4 minutes
+                        </div>
+                        <div class="tags">
+                            
+                            <a href="https://richardcsuwandi.github.io/blog/tags/federated-learning/">federated-learning</a>
+                            
+                            <a href="https://richardcsuwandi.github.io/blog/tags/machine-learning/">machine-learning</a>
+                            
+                            <a href="https://richardcsuwandi.github.io/blog/tags/artificial-intelligence/">artificial-intelligence</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </article>
+
+    <div class="article-post">
+    <p>As technology advances, AI is becoming more and more integrated into our lives. Numerous industries and companies are using AI to improve their products and services. For instance, Google uses machine learning to build <a href="https://policies.google.com/technologies/partner-sites?hl=en-US">personalized services</a> and maximize  user experiences. Unfortunately, it also comes with a challenge as such models need to be trained on tons of personal data in order to perform well. This certainly becomes an issue as we are increasingly concerned about privacy. Here&rsquo;s where federated learning comes to play.</p>
 <p>In this blog post, I will introduce the concept of federated learning, why it matters, and how it could potentially shape the future of AI.</p>
-<h3 id=what-is-federated-learning>
-<a href=#what-is-federated-learning class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
-</a>
-What is federated learning?
+<h3 id="what-is-federated-learning">
+    <a href="#what-is-federated-learning" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    What is federated learning?
 </h3>
-<p><img loading=lazy src=https://cdn-images-1.medium.com/max/1080/0*ncV5PeMSC8pHBLpN alt></p>
-<p>Federated learning was first introduced by Google in 2017, in a blog post titled <a href=https://ai.googleblog.com/2017/04/federated-learning-collaborative.html>&ldquo;Federated Learning: Collaborative Machine Learning without Centralized Training Data&rdquo;</a>. As they put it,</p>
+<p><img loading="lazy" 
+    src="https://cdn-images-1.medium.com/max/1080/0*ncV5PeMSC8pHBLpN" 
+    alt="" 
+     /></p>
+<p>Federated learning was first introduced by Google in 2017, in a blog post titled <a href="https://ai.googleblog.com/2017/04/federated-learning-collaborative.html">&ldquo;Federated Learning: Collaborative Machine Learning without Centralized Training Data&rdquo;</a>. As they put it,</p>
 <blockquote>
 <p>&ldquo;Federated learning enables mobile phones to collaboratively learn a shared prediction model while keeping all the training data on device, decoupling the ability to do machine learning from the need to store the data in the cloud.&rdquo;</p>
 </blockquote>
-<p><img loading=lazy src=https://cdn-images-1.medium.com/max/1080/0*eKT6eswrWynOHbs6 alt></p>
+<p><img loading="lazy" 
+    src="https://cdn-images-1.medium.com/max/1080/0*eKT6eswrWynOHbs6" 
+    alt="" 
+     /></p>
 <p>Thus, federated learning can be thought of as a new approach to machine learning that allows you to train models across devices without pooling the data. Instead of bringing users' data to the server, federated learning brings the machine learning model to the users' devices. </p>
 <p>With the above idea in mind, the way federated learning works is actually quite intuitive. A general federated learning framework usually involves the following steps:</p>
 <ol>
@@ -79,49 +135,84 @@ What is federated learning?
 <li>The server averages the updates across all users to improve the shared model</li>
 </ol>
 <p>Here, it is worth noting that federated learning is an <strong>iterative process</strong>; which means that the above steps will be repeated until a pre-defined termination criterion is met (e.g., a maximum number of iterations is reached or the model accuracy is greater than a threshold). </p>
-<p><em>Note: If you&rsquo;re interested to learn more about how federated learning works on a technical level, you can check out <a href=https://arxiv.org/abs/1602.05629>this 2016 paper</a> published by Google AI researchers. If you prefer a less technical overview, you should check out <a href=https://federated.withgoogle.com/>this online comic</a> instead.</em></p>
-<h3 id=why-does-federated-learningmatter>
-<a href=#why-does-federated-learningmatter class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
-</a>
-Why does federated learning matter?
+<p><em>Note: If you&rsquo;re interested to learn more about how federated learning works on a technical level, you can check out <a href="https://arxiv.org/abs/1602.05629">this 2016 paper</a> published by Google AI researchers. If you prefer a less technical overview, you should check out <a href="https://federated.withgoogle.com/">this online comic</a> instead.</em></p>
+<h3 id="why-does-federated-learningmatter">
+    <a href="#why-does-federated-learningmatter" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    Why does federated learning matter?
 </h3>
-<p><img loading=lazy src=https://cdn-images-1.medium.com/max/1080/0*3s3svoB3pAXJ_Ef8 alt></p>
+<p><img loading="lazy" 
+    src="https://cdn-images-1.medium.com/max/1080/0*3s3svoB3pAXJ_Ef8" 
+    alt="" 
+     /></p>
 <p>Traditional machine learning adopts a <strong>centralized</strong> approach which requires all the data to be brought together to a server, where the models are trained. This centralized training approach, however, is privacy-intrusive as users have to trade their privacy by sending their personal data to the server owned by the AI companies. </p>
 <p>In light of this, federated learning is basically the <strong>decentralized</strong> form of machine learning. Unlike the traditional machine learning approaches, federated learning does not require the data to be stored in the server. Instead, the data stays on each users' device and thus privacy is preserved. In such a case, users can benefit from obtaining a well-trained machine learning model without sending their sensitive personal data to the server.</p>
-<h3 id=how-could-federated-learning-shape-the-future-ofai>
-<a href=#how-could-federated-learning-shape-the-future-ofai class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
-</a>
-How could federated learning shape the future of AI?
+<h3 id="how-could-federated-learning-shape-the-future-ofai">
+    <a href="#how-could-federated-learning-shape-the-future-ofai" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    How could federated learning shape the future of AI?
 </h3>
-<p><img loading=lazy src=https://cdn-images-1.medium.com/max/1080/0*SQ6ox05dlBOyZzN- alt></p>
-<p>In recent years, data privacy has become the major obstacle for the development of AI, especially with the establishment of data protection and privacy laws like the <a href=https://gdpr-info.eu/>General Data Protection Regulation (GDPR)</a> and the <a href=https://www.oag.ca.gov/privacy/ccpa>California Consumer Privacy Act (CCPA)</a>. Thanks to federated learning, these barriers have been broken and we now have a secure way of training machine learning models within users' devices.</p>
+<p><img loading="lazy" 
+    src="https://cdn-images-1.medium.com/max/1080/0*SQ6ox05dlBOyZzN-" 
+    alt="" 
+     /></p>
+<p>In recent years, data privacy has become the major obstacle for the development of AI, especially with the establishment of data protection and privacy laws like the <a href="https://gdpr-info.eu/">General Data Protection Regulation (GDPR)</a> and the <a href="https://www.oag.ca.gov/privacy/ccpa">California Consumer Privacy Act (CCPA)</a>. Thanks to federated learning, these barriers have been broken and we now have a secure way of training machine learning models within users' devices.</p>
 <p>Federated learning allows us to build better machine learning models that can provide personalized services and maximize user experiences. A huge amount of data are produced from user&rsquo;s devices on a daily basis. These data are valuable as it contains personal information about the users and their personal interests. With federated learning, it is now possible to build such personalized models while still preserving users' privacy.</p>
-<h3 id=whats-next>
-<a href=#whats-next class=anchor><svg class="icon" aria-hidden="true" focusable="false" height="16" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5.0-3-1.69-3-3.5S2.55 3 4 3h4c1.45.0 3 1.69 3 3.5.0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98.0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98.0-2-1.22-2-2.5.0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45.0 3-1.69 3-3.5S14.5 6 13 6z"/></svg>
-</a>
-What's Next?
+<h3 id="whats-next">
+    <a href="#whats-next" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    What&#39;s Next?
 </h3>
 <p>In this blog post, we have explored a new decentralized approach to machine learning called federated learning. I personally believe that federated learning will play an important part in shaping the future of AI. In the near future, we will see a plethora of new applications taking advantage of federated learning, enhancing user experience in a way that was not possible before. Of course, this breakthrough also comes with a unique set of challenges that AI researchers need to tackle to bring this field forward. Nevertheless, the future looks exciting if AI and privacy could go hand in hand.</p>
+
+    </div>
 </div>
+
+<div class="container">
+    
+    <nav class="flex container suggested">
+        
+        <a rel="prev" href="https://richardcsuwandi.github.io/blog/posts/linkedin-analysis/" title="Previous post (older)">
+            <span>Previous</span>
+            Analyzing My Own LinkedIn Data
+            </a>
+        
+        
+        
+    </nav>
+    
 </div>
-<div class=container>
-<nav class="flex container suggested">
-<a rel=prev href=https://richardcsuwandi.github.io/blog/posts/linkedin-analysis/ title="Previous post (older)">
-<span>Previous</span>
-Analyzing My Own LinkedIn Data
-</a>
-</nav>
+ 
+<div class="container">
+    
 </div>
-<div class=container>
-</div>
+
 </main>
-</main>
-<footer class="footer flex">
-<section class=container>
-<nav class=footer-links>
-</nav>
-</section>
-<script defer src=https://richardcsuwandi.github.io/blog/ts/features.5b0e1ea6de1458adc3d83cf2550066d995b148f384d34a9c1ddad2dd7d0fe110.js data-enable-footnotes=true></script>
+
+
+        </main>
+        <footer class="footer flex">
+    <section class="container">
+        <nav class="footer-links">
+            
+        </nav>
+    </section>
+    <script defer src="https://richardcsuwandi.github.io/blog/ts/features.5b0e1ea6de1458adc3d83cf2550066d995b148f384d34a9c1ddad2dd7d0fe110.js" data-enable-footnotes="true"></script>
 </footer>
-</body>
+    </body>
 </html>
