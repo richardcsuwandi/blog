@@ -1,22 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>deep-learning on Richard&#39;s Blog</title>
-    <link>https://richardcsuwandi.github.io/blog/tags/deep-learning/</link>
-    <description>Recent content in deep-learning on Richard&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://richardcsuwandi.github.io/blog/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>I Taught My Computer to Classify Chinese Calligraphy Styles</title>
-      <link>https://richardcsuwandi.github.io/blog/posts/chinese-calligraphy/</link>
-      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://richardcsuwandi.github.io/blog/posts/chinese-calligraphy/</guid>
-      <description>MotivationAs an international student studying in China, I’ve always been fascinated by the diversity of Chinese culture and history. This motivated me to build a Chinese calligraphy classifier.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>deep-learning on Richard's Blog</title><link>https://richardcsuwandi.github.io/blog/tags/deep-learning/</link><description>Recent content in deep-learning on Richard's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://richardcsuwandi.github.io/blog/tags/deep-learning/index.xml" rel="self" type="application/rss+xml"/><item><title>I Taught My Computer to Classify Chinese Calligraphy Styles</title><link>https://richardcsuwandi.github.io/blog/posts/chinese-calligraphy/</link><pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate><guid>https://richardcsuwandi.github.io/blog/posts/chinese-calligraphy/</guid><description>Motivation
+As an international student studying in China, I’ve always been fascinated by the diversity of Chinese culture and history. This motivated me to build a Chinese calligraphy classifier.
 There are multiple styles of calligraphy, which mainly belong to different dynasties. Each of them has its way of shaping and arranging the character. For this project, I picked four styles:
- Seal Script (篆書 zhuanshu) Cursive Script (草書 caoshu) Clerical Script (隸書 lishu) Standard Script (楷書 kaishu)  If you&amp;rsquo;re interested, you can read more about these different styles here.</description>
-    </item>
-    
-  </channel>
-</rss>
+Seal Script (篆書 zhuanshu) Cursive Script (草書 caoshu) Clerical Script (隸書 lishu) Standard Script (楷書 kaishu) If you&amp;rsquo;re interested, you can read more about these different styles here.</description></item></channel></rss>
